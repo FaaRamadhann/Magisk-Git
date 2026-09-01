@@ -1,0 +1,13 @@
+# Cache / bytecode Python
+__pycache__/
+*.py[cod]
+
+# Artefak build residual
+dist/
+build/
+
+# Cache unduhan .deb (fetch_git.py)
+../temp/
+
+# File sementara
+*.log

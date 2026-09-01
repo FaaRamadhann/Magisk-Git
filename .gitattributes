@@ -1,0 +1,22 @@
+# Normalisasi line ending ke LF agar script berjalan benar di Android.
+# Git akan selalu checkout sebagai LF meskipun di Windows (core.autocrlf).
+* text=auto eol=lf
+
+# File biner jangan pernah diubah line ending-nya.
+*.so binary
+*.so.* binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+
+/META-INF/com/google/android/update-binary text eol=lf
+/META-INF/com/google/android/updater-script text eol=lf
+/customize.sh text eol=lf
+/post-fs-data.sh text eol=lf
+/service.sh text eol=lf
+/uninstall.sh text eol=lf
+/build.py text eol=lf
+/fetch_git.py text eol=lf
+/system/bin/git text eol=lf

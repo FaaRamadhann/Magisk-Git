@@ -1,0 +1,7 @@
+id=faagit
+name=Faa Magisk Git
+version=2.55.0
+versionCode=25500
+author=Faa Ramadhan
+description=Modul Magisk untuk menginstal Git di perangkat Android. Menyediakan Git versi terbaru dengan kompatibilitas penuh untuk pengembangan dan operasi version control di lingkungan Android.
+updateJson=

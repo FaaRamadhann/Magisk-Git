@@ -1,0 +1,44 @@
+#!/system/bin/sh
+
+# Faa Magisk Git - wrapper launcher
+# Menyiapkan environment Git lalu menjalankan binary asli.
+#
+# Runtime Git dipasang (bind-mount) oleh post-fs-data.sh ke
+#   /data/local/tmp/faagit/git
+# sehingga dapat diakses oleh pengguna NON-root (path /data/adb/modules
+# hanya bisa diakses root). Bila mount belum ada, fallback ke modul.
+
+GIT_DIRS="/data/local/tmp/faagit/git:/data/adb/modules/faagit/system/git"
+
+GIT_PREFIX=""
+for d in $(echo "$GIT_DIRS" | tr ':' ' '); do
+    if [ -x "$d/bin/git" ]; then
+        GIT_PREFIX="$d"
+        break
+    fi
+done
+
+if [ -z "$GIT_PREFIX" ]; then
+    echo "Git tidak ditemukan (pastikan module faagit aktif)" >&2
+    exit 1
+fi
+
+GIT_BIN="$GIT_PREFIX/bin/git"
+
+# Library Termux tersedia di $GIT_PREFIX/lib
+if [ -d "$GIT_PREFIX/lib" ]; then
+    export LD_LIBRARY_PATH="$GIT_PREFIX/lib:$LD_LIBRARY_PATH"
+fi
+
+# Exec path git-core & template
+export GIT_EXEC_PATH="$GIT_PREFIX/libexec/git-core"
+export GIT_TEMPLATE_DIR="$GIT_PREFIX/share/git-core/templates"
+export GIT_PAGER=cat
+
+# Fallback HOME untuk operasi git tanpa HOME user
+if [ -z "$HOME" ]; then
+    export HOME=/data/local/tmp
+fi
+mkdir -p "$HOME" 2>/dev/null
+
+exec "$GIT_BIN" "$@"
