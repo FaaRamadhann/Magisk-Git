@@ -25,6 +25,7 @@ EXCLUDE = [
     "README.md",
     OUTPUT_NAME,
     "__pycache__",
+    ".git",
 ]
 
 

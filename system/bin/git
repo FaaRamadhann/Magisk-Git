@@ -35,6 +35,12 @@ export GIT_EXEC_PATH="$GIT_PREFIX/libexec/git-core"
 export GIT_TEMPLATE_DIR="$GIT_PREFIX/share/git-core/templates"
 export GIT_PAGER=cat
 
+# Nonaktifkan config/attribute sistem bawaan Termux (path /data/data/.../com.termux
+# hanya bisa diakses di dalam sandbox Termux). Tanpa ini, user non-root akan melihat
+# "unable to access ... gitconfig/gitattributes: Permission denied".
+export GIT_CONFIG_NOSYSTEM=1
+export GIT_ATTR_NOSYSTEM=1
+
 # Fallback HOME untuk operasi git tanpa HOME user
 if [ -z "$HOME" ]; then
     export HOME=/data/local/tmp

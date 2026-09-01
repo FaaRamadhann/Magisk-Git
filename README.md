@@ -199,6 +199,11 @@ cd Magisk-Git && git log --oneline -5
 (jalur pencarian linker default), dan runtime di-bind ke `/data/local/tmp/faagit/git`
 agar bisa diakses user biasa.
 
+Wrapper otomatis menonaktifkan config/attribute sistem bawaan Termux
+(`GIT_CONFIG_NOSYSTEM=1` / `GIT_ATTR_NOSYSTEM=1`) agar tidak muncul error
+`unable to access .../gitconfig: Permission denied`. Konfigurasi global disimpan
+di `~/.gitconfig` biasa.
+
 > **HTTPS clone (SSL):** bila muncul `SSL certificate problem`, arahkan Git ke kumpulan
 > CA Android:
 > ```bash
