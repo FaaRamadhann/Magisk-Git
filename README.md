@@ -24,6 +24,8 @@ Bineri Git + seluruh library dependency (libcurl, openssl, pcre2, zlib, libssh2,
 diambil dari **repo paket resmi Termux** (`packages.termux.dev`) untuk arsitektur **arm64**.
 Versi modul otomatis mengikuti versi paket git Termux terkini.
 
+> Note: Modul ini cocok untuk kamu yang malas menggunakan Git melalui Termux dan lebih memilih menjalankan Git langsung dari shell Android tanpa perlu membuka atau bergantung pada Termux.
+
 ## Fitur
 
 - **Git 2.55.0** (arm64-v8a) lengkap dengan dependency (curl, openssl, zlib, pcre2, ...)
