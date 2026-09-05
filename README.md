@@ -8,7 +8,7 @@ Modul **Magisk / KernelSU / APatch** untuk menginstal **Git** ke dalam perangkat
 [![KernelSU](https://img.shields.io/badge/KernelSU-Module-%23231816)](https://github.com/tiann/KernelSU)
 [![APatch](https://img.shields.io/badge/APatch-Module-%2332de84)](https://github.com/apatch/apatch)
 [![Git](https://img.shields.io/badge/Git-2.55.0-%23de4c36)](https://git-scm.com)
-[![License](https://img.shields.io/github/license/FaaRamadhan2/Magisk-Git)](LICENSE)
+[![License](https://img.shields.io/github/license/FaaRamadhann/Magisk-Git)](LICENSE)
 
 </div>
 
@@ -56,7 +56,7 @@ Prasyarat: sudah ada `git` dan `python 3` (versi apa pun) di PC.
 
 ```bash
 # 1. Clone repo ini
-git clone https://github.com/FaaRamadhan2/Magisk-Git.git
+git clone https://github.com/FaaRamadhann/Magisk-Git.git
 cd Magisk-Git
 
 # 2. (Opsional) Kalau mau versi terbaru dengan bineri yang sudah termasuk,
@@ -128,7 +128,7 @@ Prasyarat: sudah ada **Termux** dan akses **root** (`su`).
 
 ```bash
 pkg install -y git python
-git clone https://github.com/FaaRamadhan2/Magisk-Git.git
+git clone https://github.com/FaaRamadhann/Magisk-Git.git
 cd Magisk-Git
 ```
 
@@ -191,7 +191,7 @@ git add readme.txt
 git commit -m "pesan pertama"
 
 # Clone repo dari internet
-git clone https://github.com/FaaRamadhan2/Magisk-Git.git
+git clone https://github.com/FaaRamadhann/Magisk-Git.git
 cd Magisk-Git && git log --oneline -5
 ```
 
